@@ -7,18 +7,19 @@
 #  email           :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  artist?         :boolean          default(FALSE), not null
+#  is_artist       :boolean          default(FALSE), not null
 #  artist_location :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  artist_name     :string
 #
 
 class User < ApplicationRecord
-    validates :username, :email, :session_token, :password_digest, :artist?, presence: true
+    validates :username, :email, :session_token, :password_digest, presence: true
     validates :password, length: {minimum: 6, allow_nil: true}
-    validates :artist_location, presence: true, if :artist?
+    validates :artist_name, presence: true if :is_artist == true
 
-    attr_reader: :password
+    attr_reader :password
     
     # associations
 
@@ -35,7 +36,7 @@ class User < ApplicationRecord
         self.password_digest = BCrypt::Password.create(password)
     end
 
-    def is_password?password)
+    def is_password?(password)
         BCrypt::Password.new(self.password_digest).is_password?(password)
     end
 
@@ -54,3 +55,4 @@ class User < ApplicationRecord
         self.session_token ||= SecureRandom::urlsafe_base64(16)
     end
 end
+

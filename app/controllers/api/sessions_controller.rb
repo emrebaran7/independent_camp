@@ -4,15 +4,19 @@ class Api::SessionsController < ApplicationController
     end
 
     def create
-        #find user by credentials
-        @user = User.find_by_credentials(params[:user][:username], parans[:user][:password])
+        @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
 
         if @user.nil?
             render json: ["Invalid crentials"], status: 401
         else
-            login(@user)
-            render :show
+            login!(@user)
+            render "api/users/show"
+            # render json: @user
         end
+    end
+
+    def show
+
     end
 
     def destroy
