@@ -26,6 +26,8 @@ class User < ApplicationRecord
         foreign_key: :artist_id,
         class_name: 'Album'
 
+    has_many :tracks, 
+        through: :albums
 
     after_initialize :ensure_session_token
 
