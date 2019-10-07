@@ -14,7 +14,7 @@ const App = () => (
     <div>
         <header className="nav-">
             {/* {LoginSignupHeader} */}
-            <img src={window.bandcampURL}></img>
+            <img src={window.bandcampURL}></img> 
             <div className="login-signup-nav-empty"></div>
         </header>
 
