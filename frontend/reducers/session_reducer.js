@@ -5,7 +5,6 @@ const _nullUser = Object.freeze({
     id: null
 });
 
-
 const SessionReducer = (oldState = {}, action) => {
     // debugger
     Object.freeze(oldState);

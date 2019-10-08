@@ -5,6 +5,13 @@ export const fetchAlbums = () => (
     })
 );
 
+export const fetchFourAlbums = () => (
+    $.ajax({
+        method: 'GET',
+        url: 'api/albums/get_last/4'
+    })
+)
+ 
 export const fetchAlbum = (id) => (
     $.ajax({
         method: 'GET',

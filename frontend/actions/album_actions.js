@@ -3,6 +3,7 @@ import React from 'react';
 export const RECEIVE_ALBUMS = "RECEIVE_ALBUMS";
 export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
 export const REMOVE_ALBUM = "REMOVE_ALBUM";
+export const RECEIVE_FOUR_ALBUMS = "RECEIVE_FOUR_ALBUMS";
 
 import * as AlbumApiUtil from "../util/album_api_util"
 
@@ -27,11 +28,23 @@ const removeAlbum = album => {
     };
 };
 
+const receiveFourAlbums = ({albums, users}) => {
+    return {
+        type: RECEIVE_FOUR_ALBUMS,
+        albums,
+        users
+    };
+};
+
 
 // thunk actions
 
 export const fetchAllAlbums = () => dispatch => (
     AlbumApiUtil.fetchAlbums().then((albums) => dispatch(receiveAlbums(albums)))
+)
+
+export const fetchFourAlbums = () => dispatch => (
+    AlbumApiUtil.fetchFourAlbums().then((payload) => dispatch(receiveFourAlbums(payload)))
 )
 
 export const fetchAlbum = (id) => dispatch => (

@@ -25,6 +25,12 @@ class Album < ApplicationRecord
         primary_key: :id,
         foreign_key: :album_id,
         class_name: 'Track'
+
+
+    def self.get_last(num)
+        Album.order('release_date desc').limit(num)
+    end
+        
 end
 
 

@@ -1,0 +1,34 @@
+footer {
+  padding: 0 0 80px;
+  display: flex;
+  flex-direction: row;
+  min-height: 320px;
+  justify-content: space-between;
+  align-items: space-between;
+  align-content: center;
+  padding: 0px 0px 80px;
+  font-size: 13px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  align-content: space-around;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: #477987;
+}
+
+.right-footer{
+    justify-content: flex-end;
+    margin-right: 77px;
+    margin-top: 40px;
+    
+}
+
+
+
+.left-footer{
+    justify-content: flex-start;
+    margin-left: 77px;
+    margin-top: 40px;
+}

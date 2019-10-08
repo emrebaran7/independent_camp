@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :albums
     resources :tracks
+    get '/albums/get_last/:num', to: 'albums#get_last'
   end
 end

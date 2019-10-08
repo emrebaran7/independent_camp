@@ -1,6 +1,6 @@
 class Api::AlbumsController < ApplicationController
     def index
-        @albums = Album.all
+        @albums = Album.all.includes(:tracks)
         render :index
     end
 
@@ -49,6 +49,12 @@ class Api::AlbumsController < ApplicationController
         else
             render json: 'Album not found', status: 404
         end
+    end
+
+
+    def get_last
+        @albums = Album.get_last(params[:num])
+        render :index
     end
 
     private

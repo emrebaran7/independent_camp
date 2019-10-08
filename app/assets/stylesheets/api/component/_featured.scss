@@ -1,0 +1,31 @@
+.splash-message {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    min-height: 90px;
+}
+
+.splash-featured-container {
+    background-color: #222;
+    color: white;
+    display: flex;
+    min-height: 300px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.splash-main-featured-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.splash-side-featured-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

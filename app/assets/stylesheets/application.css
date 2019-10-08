@@ -32,16 +32,31 @@ hr{
 	line-height: 16px;
 }
 
-h2{
+h2 {
 	font-size: 18px;
 	font-weight: 500;
 	color: #333;
 }
 
-footer{
-    background: #477987;
-    box-shadow: 0 50vh 0 50vh #477987;4
+a { 
+	color:white;
+	color: #FFFFFF;
+    text-decoration: none;
 }
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+  cursor: pointer;
+  text-decoration: underline;
+  
+}
+
 
 body, div, span, applet, object, iframe,
 h1, h3, h4, h5, h6, p, blockquote, pre,
@@ -58,16 +73,18 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+	/* border: 0; */
+	/* font-size: 100%; */
+	/* font: inherit;
+	vertical-align: baseline; */
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+/* article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
-}
+} */
+
 body {
 	line-height: 1;
 }
