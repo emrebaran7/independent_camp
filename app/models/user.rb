@@ -21,7 +21,13 @@ class User < ApplicationRecord
 
     attr_reader :password
     
-    # associations
+    has_many :albums, 
+        primary_key: :id,
+        foreign_key: :artist_id,
+        class_name: 'Album'
+
+    has_many :tracks, 
+        through: :albums
 
     after_initialize :ensure_session_token
 

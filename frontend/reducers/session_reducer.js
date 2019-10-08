@@ -5,8 +5,7 @@ const _nullUser = Object.freeze({
     id: null
 });
 
-
-const sessionReducer = (oldState = {}, action) => {
+const SessionReducer = (oldState = {}, action) => {
     // debugger
     Object.freeze(oldState);
     let newState;
@@ -23,4 +22,4 @@ const sessionReducer = (oldState = {}, action) => {
     }
 }
 
-export default sessionReducer;
+export default SessionReducer;

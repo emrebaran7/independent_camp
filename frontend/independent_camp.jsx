@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 //Components
 import Root from './components/root';
 import configureStore from './store/store';
+import {fetchFourAlbums} from './actions/album_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -22,9 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
     //TESTING START
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.fetchFourAlbums = fetchFourAlbums;
     //TESTING END
 
     const root = document.getElementById('root');
+    // debugger
     ReactDOM.render(<Root store={store} />, root)
 })
 
