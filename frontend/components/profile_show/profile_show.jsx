@@ -5,14 +5,12 @@ import {logout} from '../../actions/session_actions'
 class Profile extends React.Component {
     constructor(props){
         super(props);
-        // currentUser = this.state.session
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e){
         e.preventDefault();
-        // debugger
         this.props.logout().then(() => this.props.history.push('/'));
     }
 

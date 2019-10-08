@@ -8,16 +8,14 @@ import ProfileShowContainer from './profile_show/profile_show_container'
 import SplashContainer from './splash/splash_container'
 import {AuthRoute} from '../util/route_util'
 import {Link} from 'react-router-dom'
-import LoginSignupHeader from './nav/login_signup_header'
+import NavbarContainer from './nav/navbar_container'
 
 
 const App = () => (
     <div>
-        <header className="nav-">
-            {LoginSignupHeader}
-
-            <div className="login-signup-nav-empty"></div>
-        </header>
+        <div className="navbar-container">     
+            <NavbarContainer/>
+        </div>
 
         <AuthRoute path="/artist/signup" component={ArtistSignupFormContainer} />
         <AuthRoute path="/fan/signup" component={FanSignupFormContainer} />
@@ -27,13 +25,13 @@ const App = () => (
 
 
         <footer>
-            <div className="left-footer">Independentcamp is a clone of bandcamp created by Emre Ersolmaz <br/>
-                <a href="https://www.linkedin.com/in/emre-ersolmaz/">LinkedIn</a> <br/>
-                <a href="https://github.com/emrebaran7">Github</a> <br />
-                <a href="">Webpage</a> <br/>
+            <div className="left-footer">Independentcamp is a clone of bandcamp created by Emre Ersolmaz
+                <a href="https://www.linkedin.com/in/emre-ersolmaz/">LinkedIn</a>
+                <a href="https://github.com/emrebaran7">Github</a>
+                <a href="">Webpage</a>
             </div>
             <div className="right-footer">
-                <Link exact to="/artist/signup">Independentcamp for Aritsts</Link><br/>
+                <Link exact to="/artist/signup">Independentcamp for Aritsts</Link>
                 <Link exact to="/fan/signup">Independentcamp for Fans</Link>
             </div>
         </footer>

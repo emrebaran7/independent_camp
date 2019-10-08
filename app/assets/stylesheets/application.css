@@ -38,25 +38,6 @@ h2 {
 	color: #333;
 }
 
-a { 
-	color:white;
-	color: #FFFFFF;
-    text-decoration: none;
-}
-
-a:visited {
-  color: white;
-  text-decoration: none;
-}
-
-/* mouse over link */
-a:hover {
-  color: white;
-  cursor: pointer;
-  text-decoration: underline;
-  
-}
-
 
 body, div, span, applet, object, iframe,
 h1, h3, h4, h5, h6, p, blockquote, pre,

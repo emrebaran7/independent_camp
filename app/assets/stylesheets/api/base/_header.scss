@@ -1,0 +1,92 @@
+.navbar-container{
+    top: 0;
+    transition: all .25s ease-out;
+    background-color: white
+}
+
+.main-navbar{
+    // min-height: 85px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 400px;
+    margin-right: 400px;
+    padding-bottom: 10px;
+    min-height: 100%;
+    background-color: white
+}
+
+.bare-navbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-bottom: 10px;
+    background-color: #dddddd;
+    height: 105px;
+}
+
+.bare-navbar a{
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+.main-navbar a{
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+.main-navbar button{
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+.left-navbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+
+.right-navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 30%;
+    align-items: flex-end;
+    align-content: space-between;
+    // margin-bottom: 21px;
+}
+
+
+.logo {
+    font-size: 26px;
+    margin-top: 23px;
+    display: flex;
+    flex-direction: row;
+}
+
+.parallelogram{
+    // transform: translate(-50%, -50%);
+    margin-top: 3px;
+    margin-right: 5px;
+    width: 31px;
+    height: 20px;
+    background: #800020;
+    transform: skew(-20deg);
+}
+
+.motto {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+
