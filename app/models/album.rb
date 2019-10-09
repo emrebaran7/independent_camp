@@ -26,10 +26,14 @@ class Album < ApplicationRecord
         foreign_key: :album_id,
         class_name: 'Track'
 
+    has_one_attached :photo
+
 
     def self.get_last(num)
         Album.order('release_date desc').limit(num)
     end
+
+    
         
 end
 

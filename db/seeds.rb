@@ -67,12 +67,13 @@ user6 = User.create(
     artist_location: 'Panama'
 )
 
-
 album1 = Album.create(
     artist_id: User.find_by(username: 'Dawn of Midi').id,
     title: 'Dysnomia',
     description: "'Something totally unprecedented' by Pitchfork",
-    credits: 'Aakaash Israni - Bass | Amino Belyamani - Piano | Qasim Naqvi - Drums',
+    credits: 'Aakaash Israni - Bass
+    Amino Belyamani - Piano
+    Qasim Naqvi - Drums',
     release_date: Date.new(2015,5,26)
 )
 

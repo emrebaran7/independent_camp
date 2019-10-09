@@ -18,4 +18,5 @@ class Track < ApplicationRecord
         primary_key: :id,
         foreign_key: :album_id,
         class_name: 'Album'
+
 end
