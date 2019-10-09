@@ -1,7 +1,7 @@
 json.album do 
     json.partial! 'api/albums/album', album: @album
+    json.photoUrl url_for(@album.photo)
 end
-
 
 json.tracks do 
     @album.tracks.each do |track|
@@ -10,3 +10,4 @@ json.tracks do
         end
     end
 end
+

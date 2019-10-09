@@ -31,9 +31,7 @@ class Album < ApplicationRecord
 
     def self.get_last(num)
         Album.order('release_date desc').limit(num)
-    end
-
-    
+    end    
         
 end
 

@@ -7,7 +7,7 @@ export const getFeaturedAlbums = state => {
 }
 
 
-//refactor BIG TIME5
+//refactor BIG TIME
 
 export const getFeaturedAlbumsArtists = state => {
 
@@ -17,3 +17,7 @@ export const getFeaturedAlbumsArtists = state => {
 
     return artists;
 }
+
+export const selectAlbum = ({ albums }, albumId) => {
+    return albums[albumId]
+};

@@ -32,31 +32,35 @@ user3 = User.create(
     email: 'emre.ersolmaz@gmail.com',
     password: 'Andersson1',
     is_artist: true,
-    artist_location: 'Brooklyn, New York' 
+    artist_location: 'Brooklyn, New York',
+    artist_name: "Emre Ersolmaz"
 )
 
 user4 = User.create(
-    username: 'Dawn of Midi',
+    username: 'dom21',
     email: 'dom@dom.com',
     password: 'password',
     is_artist: true,
-    artist_location: 'Brooklyn, New York'
+    artist_location: 'Brooklyn, New York',
+    artist_name: "Dawn of Midi"
 )
 
 user4 = User.create(
-    username: 'Kara-Lis Coverdale',
+    username: 'klc',
     email: 'kls@gmail.com',
     password: 'password',
     is_artist: true,
-    artist_location: 'Montreal, Quebec'
+    artist_location: 'Montreal, Quebec',
+    artist_name: "Kara-Lis Coverdale"
 )
 
 user5 = User.create(
-    username: 'HTRK',
+    username: 'htrk123',
     email: 'htrk@ghostly.com',
     password: 'password',
     is_artist: true,
-    artist_location: 'Melbourne, Australia'
+    artist_location: 'Melbourne, Australia',
+    artist_name: "HTRK"
 )
 
 user6 = User.create(
@@ -64,18 +68,46 @@ user6 = User.create(
     email: 'novad@novad.com',
     password: 'password',
     is_artist: true,
-    artist_location: 'Panama'
+    artist_location: 'Panama',
+    artist_name: "Novad"
 )
 
 album1 = Album.create(
-    artist_id: User.find_by(username: 'Dawn of Midi').id,
+    artist_id: User.find_by(username: 'dom21').id,
     title: 'Dysnomia',
-    description: "'Something totally unprecedented' by Pitchfork",
+    description: 'What people are saying about Dysnomia :
+
+        " Something totally unprecedented " - Pitchfork
+
+        " Stellar...at a loss for words " - SPIN
+
+        " Sounds like something completely different " - NPR
+
+        " Perverse in a good way " - The New York Times
+
+        " Seriously never seen anything like these guys...favorite thing in years " - Jad Abumrad, Radiolab
+
+        " Cannot urge you more strongly: go see Dawn of Midi " - Sasha Frere-Jones, The New Yorker
+
+        " Moving and addictive...a feat of innovation " - Interview Magazine
+
+        " An unplugged translation of contemporary electronica...state-of-the-art. " - Time Out NY
+
+        " It sounds like nothing else right now " - The Guardian
+
+        " A mysterious, vital sound with a pull all its own " - Los Angeles Times
+
+        " A work of lunatic genius " - The Village Voice"',
     credits: 'Aakaash Israni - Bass
     Amino Belyamani - Piano
     Qasim Naqvi - Drums',
     release_date: Date.new(2015,5,26)
 )
+
+album1.photo.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/dom_dysnomia.jpg"), 
+    filename: "dom_dysnomia.jpg"
+    ) 
 
 album2 = Album.create(
     artist_id: User.find_by(username: 'emrebaran7').id,
@@ -85,16 +117,26 @@ album2 = Album.create(
     release_date: Date.new(2019,10,1)
 )
 
+album2.photo.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/ee_searching.png"), 
+    filename: "ee_searching.png"
+    ) 
+
 album3 = Album.create(
-    artist_id: User.find_by(username: 'Kara-Lis Coverdale').id,
+    artist_id: User.find_by(username: 'klc').id,
     title: 'Aftertouches',
     description: "Aftertouches playfully exploits the systemic nature of a post-sacred and post-instrument world, continuing Kara-Lis Coverdale’s exploration of coded realism and virtual transfiguration. Through an optimistic lens, Aftertouches explores and celebrates the multiple voices of the machine. Synthetic instruments sourced from VSTs, sound banks, and personal archives are arranged into holograms of dreams once inspired by physical origin. Through digital superimposition processes, instrument profiles mutate and take on new forms of articulation. Crystalline organs support and prop plastic voices and insistent water flutes dance with metallically chromatic snake-like motifs in vignettes of compositional schizophrenia. Absurd and delightful fusions seething through temporal portholes are unexpectedly swiped left, enveloped by dense clouds of lament and remembrance.",
     credits: 'All music performed, recorded, and composed by Kara-Lis Coverdale between Mar 2013-Jan 2015 in Montreal. "X 4EWI" and "Splash 144" are sections II and III from "Conversion Music" for VST and Wind Controller premiered at LMCML in June, 2014.',
     release_date: Date.new(2015,3,24)
 )
 
+album3.photo.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/klc_aftertouches.jpg"), 
+    filename: "klc_aftertouches.jpg"
+    ) 
+
 album4 = Album.create(
-    artist_id: User.find_by(username: 'HTRK').id,
+    artist_id: User.find_by(username: 'htrk123').id,
     title: 'Work (work, work)',
     description: "reviews: yourcomicbookfantasy.com/workpress.html",
     credits: "Produced by HTRK
@@ -106,6 +148,11 @@ album4 = Album.create(
     release_date: Date.new(2011,9,5)
 )
 
+album4.photo.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/htrk_work_work_work.jpg"), 
+    filename: "htrk_work_work_work.jpg"
+    ) 
+
 album5 = Album.create(
     artist_id: User.find_by(username: 'Novad').id,
     title: 'Looks Like Eldorado',
@@ -113,6 +160,11 @@ album5 = Album.create(
     credits: "Novad",
     release_date: Date.new(2018,12,1)
 )
+
+album5.photo.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/novad_looks_like_eldorado.png"), 
+    filename: "novad_looks_like_eldorado.png"
+    ) 
 
 track1 = Track.create(
     album_id: Album.find_by(title: 'Dysnomia').id,
