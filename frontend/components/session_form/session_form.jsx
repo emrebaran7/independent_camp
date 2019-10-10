@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state)
         this.props.processForm(user).then(() => this.props.history.push('/'))
     }
-
+    
     renderErrors(){
         return(
             <div>
@@ -41,6 +41,7 @@ class SessionForm extends React.Component {
     
     render(){
         let extra;
+        let demouser;
 
         if (this.props.formType === "Artist Signup") {
             extra = 
@@ -63,6 +64,13 @@ class SessionForm extends React.Component {
                 </>
         }
 
+        if (this.props.formType === "Login") {
+            demouser =
+                <>
+                    <input className="login-signup-submit" type="submit" value="Demo User" />
+                </>
+        }
+
         return(
             <div className="login-signup-container">
                 <h2>{this.props.formType === "login" ? "Log In" : "Sign Up"}</h2>
@@ -79,6 +87,7 @@ class SessionForm extends React.Component {
                         </label>
                     </div>
                     <input className="login-signup-submit" type="submit" value={this.props.formType === "login" ? "Log In" : "Sign Up"}/>
+                    {demouser}
                 </form>
             </div>
         )

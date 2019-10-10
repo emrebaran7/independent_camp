@@ -4,6 +4,7 @@ class Api::AlbumsController < ApplicationController
 
     def index
         @albums = Album.all.includes(:tracks)
+        @users = User.where(id: @albums.pluck(:artist_id))
         render :index
     end
 
@@ -60,6 +61,7 @@ class Api::AlbumsController < ApplicationController
 
     def get_last
         @albums = Album.get_last(params[:num])
+        @users = User.where(id: @albums.pluck(:artist_id))
         render :index
     end
 

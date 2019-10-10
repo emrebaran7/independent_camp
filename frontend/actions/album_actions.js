@@ -7,18 +7,19 @@ export const RECEIVE_FOUR_ALBUMS = "RECEIVE_FOUR_ALBUMS";
 
 import * as AlbumApiUtil from "../util/album_api_util"
 
-const receiveAlbum = album => {
+const receiveAlbum = ({album, tracks}) => {
     // debugger
     return {
         type: RECEIVE_ALBUM,
-        album
+        album,
+        tracks,
     };
 };
 
 const receiveAlbums = albums => {
     return {
         type: RECEIVE_ALBUMS,
-        albums
+        albums,
     };
 };
 
@@ -30,7 +31,7 @@ const removeAlbum = album => {
 };
 
 const receiveFourAlbums = ({albums, users}) => {
-    // debugger
+    debugger
     return {
         type: RECEIVE_FOUR_ALBUMS,
         albums,
@@ -50,7 +51,7 @@ export const fetchFourAlbums = () => dispatch => (
 )
 
 export const fetchAlbum = (id) => dispatch => (
-    AlbumApiUtil.fetchAlbum(id).then((album) => dispatch(receiveAlbum(album)))
+    AlbumApiUtil.fetchAlbum(id).then((payload) => dispatch(receiveAlbum(payload)))
 )
 
 export const createAlbum = (album) => dispatch => (

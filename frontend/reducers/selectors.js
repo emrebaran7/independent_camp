@@ -13,7 +13,11 @@ export const getFeaturedAlbumsArtists = state => {
 
     const albums = state.entities.albums
     let feat = state.ui.albumIds.map(id => albums[id])
-    let artists = feat.map(feat => state.entities.users[feat.artist_id] ) 
+    let artists = {}
+    
+    feat.forEach(f => {
+        artists[f.artist_id] = state.entities.users[f.artist_id];
+    });
 
     return artists;
 }

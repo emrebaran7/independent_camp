@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "open-uri"
+
 User.destroy_all
 Album.destroy_all
 Track.destroy_all
@@ -16,15 +18,15 @@ user1 = User.create(
     email: 'lorraine.merger@gmail.com', 
     password: 'charlie21',
     is_artist: false,
-    artist_location: ''
 )
 
 user2 = User.create(
     username: "gandalf",
     email: "gandalf@istari.com", 
-    password: "secretfire",
-    is_artist: false,
-    artist_location: ''
+    password: "olorin",
+    is_artist: true,
+    artist_name: "Gandalf, the Grey",
+    artist_location: 'Middle Earth'
 )
 
 user3 = User.create(
@@ -75,7 +77,7 @@ user6 = User.create(
 album1 = Album.create(
     artist_id: User.find_by(username: 'dom21').id,
     title: 'Dysnomia',
-    description: 'What people are saying about Dysnomia :/nl/
+    description: 'What people are saying about Dysnomia :
         /nl/
         " Something totally unprecedented " - Pitchfork
         /nl/
@@ -107,7 +109,7 @@ album1 = Album.create(
 )
 
 album1.photo.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/dom_dysnomia.jpg"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/dom_dysnomia.jpg"), 
     filename: "dom_dysnomia.jpg"
     ) 
 
@@ -120,7 +122,7 @@ album2 = Album.create(
 )
 
 album2.photo.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/ee_searching.png"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/ee_searching.png"), 
     filename: "ee_searching.png"
     ) 
 
@@ -133,7 +135,7 @@ album3 = Album.create(
 )
 
 album3.photo.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/klc_aftertouches.jpg"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/klc_aftertouches.jpg"), 
     filename: "klc_aftertouches.jpg"
     ) 
 
@@ -156,7 +158,7 @@ album4 = Album.create(
 )
 
 album4.photo.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/htrk_work_work_work.jpg"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/htrk_work_work_work.jpg"), 
     filename: "htrk_work_work_work.jpg"
     ) 
 
@@ -169,7 +171,7 @@ album5 = Album.create(
 )
 
 album5.photo.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/novad_looks_like_eldorado.png"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/novad_looks_like_eldorado.png"), 
     filename: "novad_looks_like_eldorado.png"
     ) 
 
@@ -180,7 +182,7 @@ track1 = Track.create(
 )
 
 track1.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Io.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Io.mp3"), 
     filename: "Io.mp3"
     ) 
 
@@ -191,7 +193,7 @@ track2 = Track.create(
 )
 
 track2.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Sinope.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Sinope.mp3"), 
     filename: "Sinope.mp3"
     ) 
 
@@ -202,7 +204,7 @@ track3 = Track.create(
 )
 
 track3.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Atlas.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Atlas.mp3"), 
     filename: "Atlas.mp3"
     ) 
 
@@ -213,7 +215,7 @@ track4 = Track.create(
 )
 
 track4.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Nix.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Nix.mp3"), 
     filename: "Nix.mp3"
     ) 
 
@@ -224,7 +226,7 @@ track5 = Track.create(
     )
 
 track5.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Moon.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Moon.mp3"), 
     filename: "Moon.mp3"
     ) 
 
@@ -235,7 +237,7 @@ track6 = Track.create(
 ) 
 
 track6.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Ymir.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Ymir.mp3"), 
     filename: "Ymir.mp3"
     ) 
 
@@ -246,7 +248,7 @@ track7 = Track.create(
 )
 
 track7.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Ijiraq.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Ijiraq.mp3"), 
     filename: "Ijiraq.mp3"
     ) 
 
@@ -257,7 +259,7 @@ track8 = Track.create(
 )
 
 track8.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Algol.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Algol.mp3"), 
     filename: "Algol.mp3"
     ) 
 
@@ -268,7 +270,7 @@ track9 = Track.create(
 ) 
 
 track9.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Dysnomia.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Dysnomia.mp3"), 
     filename: "Dysnomia.mp3"
     ) 
 
@@ -279,7 +281,7 @@ track10 = Track.create(
 )
 
 track10.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/emre-ersolmaz-searching/Searching.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Searching.mp3"), 
     filename: "Searching.mp3"
     ) 
 
@@ -290,7 +292,7 @@ track11 = Track.create(
 )
 
 track11.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/emre-ersolmaz-searching/Say_Something.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Say_Something.mp3"), 
     filename: "Say_Something.mp3"
     ) 
 
@@ -301,7 +303,7 @@ track12= Track.create(
 )
 
 track12.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Imgs_R.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Imgs_R.mp3"), 
     filename: "Imgs_R.mp3"
     ) 
 
@@ -312,7 +314,7 @@ track13 = Track.create(
 )
 
 track13.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Touch_Me_Die.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Touch_Me_Die.mp3"), 
     filename: "Touch_Me_Die.mp3"
     ) 
 
@@ -323,7 +325,7 @@ track14 = Track.create(
 )
 
 track14.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Splash_144.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Splash_144.mp3"), 
     filename: "Splash_144.mp3"
     ) 
 
@@ -334,7 +336,7 @@ track15 = Track.create(
 )
 
 track15.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/X_4ewi.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/X_4ewi.mp3"), 
     filename: "X_4ewi.mp3"
     ) 
 
@@ -345,7 +347,7 @@ track16 = Track.create(
 )
 
 track16.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Ad_Renaline.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Ad_Renaline.mp3"), 
     filename: "Ad_Renaline.mp3"
     ) 
 
@@ -356,7 +358,7 @@ track17 = Track.create(
 )
 
 track17.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Icon_C.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Icon_C.mp3"), 
     filename: "Icon_C.mp3"
     ) 
 
@@ -367,7 +369,7 @@ track18 = Track.create(
 )
 
 track18.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Arcane.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Arcane.mp3"), 
     filename: "Arcane.mp3"
     ) 
 
@@ -378,7 +380,7 @@ track19 = Track.create(
 )
 
 track19.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Nu_chanic.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Nu_Chanic.mp3"), 
     filename: "Nu_chanic.mp3"
     ) 
 
@@ -389,7 +391,7 @@ track20 = Track.create(
 ) 
 
 track20.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Saps_H.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Saps_H.mp3"), 
     filename: "Saps_H.mp3"
     ) 
 
@@ -400,7 +402,7 @@ track21 = Track.create(
 )
 
 track21.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Ice_Eyes_Eis.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Ice_Eyes_Eis.mp3"), 
     filename: "Ice_Eyes_Eis.mp3"
     ) 
 
@@ -412,7 +414,7 @@ track22 = Track.create(
 )
 
 track22.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Slo_Glo.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Slo_Glo.mp3"), 
     filename: "Slo_Glo.mp3"
     ) 
 
@@ -424,7 +426,7 @@ track23 = Track.create(
 )
 
 track23.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Eat_Yr_Heart.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Eat_Yr_Heart.mp3"), 
     filename: "Eat_Yr_Heart.mp3"
     ) 
 
@@ -435,7 +437,7 @@ track24 = Track.create(
 )
 
 track24.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Bendin.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Bendin.mp3"), 
     filename: "Bendin.mp3"
     ) 
 
@@ -446,7 +448,7 @@ track25 = Track.create(
 )
 
 track25.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Skinny.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Skinny.mp3"), 
     filename: "Skinny.mp3"
     ) 
 
@@ -457,7 +459,7 @@ track26 = Track.create(
 )
 
 track26.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Synthetik.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Synthetik.mp3"), 
     filename: "Synthetik.mp3"
     ) 
 
@@ -468,7 +470,7 @@ track27 = Track.create(
 )
 
 track27.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Poison.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Poison.mp3"), 
     filename: "Poison.mp3"
     ) 
 
@@ -479,7 +481,7 @@ track28 = Track.create(
 )
 
 track28.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Work_that_Body.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Work_that_Body.mp3"), 
     filename: "Work_that_Body.mp3"
     ) 
 
@@ -490,7 +492,7 @@ track29 = Track.create(
 ) 
 
 track29.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Love_Triangle.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Love_Triangle.mp3"), 
     filename: "Love_Triangle.mp3"
     ) 
 
@@ -501,7 +503,7 @@ track30 = Track.create(
 )
 
 track30.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Body_Double.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Body_Double.mp3"), 
     filename: "Body_Double.mp3"
     ) 
 
@@ -513,6 +515,6 @@ track31 = Track.create(
 )
 
 track31.audio.attach(
-    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/novad-looks-like-eldorado/Looks_like_Eldorado.mp3"), 
+    io: open("https://independent-camp-dev.s3.us-east-2.amazonaws.com/Looks_like_Eldorado.mp3"), 
     filename: "Looks_like_Eldorado.mp3"
     ) 

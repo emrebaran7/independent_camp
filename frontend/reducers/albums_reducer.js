@@ -9,7 +9,7 @@ const AlbumsReducer = (oldState = {}, action) => {
             return action.albums;
         case RECEIVE_ALBUM:
             // debugger
-            newState = merge( {}, oldState, {[action.album.album.id]: action.album})
+            newState = merge( {}, oldState, {[action.album.id]: action.album})
             return newState;
         case RECEIVE_FOUR_ALBUMS:
             // debugger

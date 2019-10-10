@@ -4,14 +4,6 @@ import { Link } from 'react-router-dom';
 class AlbumShow extends React.Component {
     constructor(props) {
         super(props);
-        this.props.album.album = {
-        };
-
-        this.props.album.track = {
-        };
-        
-        this.props.album.album.artist = {}
-        this.props.album.album.description = ""
     }
 
     componentDidMount(){
@@ -20,44 +12,50 @@ class AlbumShow extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (typeof prevProps.album === 'undefined') {
-            const albumId = this.props.match.params.albumId; 
+        debugger
+
+        const albumId = this.props.match.params.albumId;
+
+        if ( prevProps.match.params.albumId !== albumId) {
             this.props.fetchAlbum(albumId);
         }
     }
 
     render(){
-        // const tracks = this.props.album.tracks.map(track => {
-        //     <li className="album-track-ele" key={track.id}>
-        //         {track.ord}. {track.title}
-        //     </li>
-        // })
+        // debugger
+        if (!this.props.album || this.props.tracks.length < 1) {
+            return null
+        }
+        let tracks = this.props.tracks.map(track => {
+            return( 
+                    <li className="album-track-ele" key={track.id}>
+                        <div>{track.ord}.{track.title}</div>
+                    </li>
+                )
+            })
         
-        // const tracks = this.props.album.tracks
-        // debugger
-
-        const description = this.props.album.album.description.split(" /nl/").map(line => {
-            <li>{line}</li>
+        let description = this.props.album.description.split("/nl/").map((line, i) => {
+            return <li key={i}>{line}</li>
         })
-        // debugger
 
         return (
             <div className='album-show-container'>
                 <div className='album-show-left'>
-                    <header>{this.props.album.album.title} <br/>
-                        by {this.props.album.album.artist.artist_name} </header>
+                    <header>{this.props.album.title} <br/>
+                        by {this.props.album.artist.artist_name}
+                    </header>
                     {/* audio player  */}
                     <strong>Digital Album</strong>
                     <p>High-quality download in MP3</p>
-                    {/* <ul className='tracks'>{this.props.album.tracks}</ul> */}
-                    <p className='album-description'>{this.props.album.album.description}</p>
-                    <p className='album-release-date'>{this.props.album.album.release_date}</p>
-                    <p className='album-release-credits'>{this.props.album.album.credits}</p>
+                    <ul className='tracks'>{tracks}</ul>
+                    <p className='album-description'>{description}</p>
+                    <p className='album-release-date'>{this.props.album.release_date}</p>
+                    <p className='album-release-credits'>{this.props.album.credits}</p>
                     <p> © all rights reserved</p>
                 </div>
 
                 <div className='album-show-right'>
-                    <img src={this.props.album.album.photoUrl} alt=""/>
+                    <img src={this.props.album.photoUrl} alt=""/>
                 </div>
             </div>
         )
