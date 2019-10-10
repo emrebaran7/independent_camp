@@ -1,4 +1,7 @@
 class Api::AlbumsController < ApplicationController
+    before_action :ensure_logged_in, only: [:new, :edit, :update, :create, :destroy]
+    #cookies? 
+
     def index
         @albums = Album.all.includes(:tracks)
         render :index

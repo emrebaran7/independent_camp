@@ -16,11 +16,10 @@ class Splash extends React.Component{
 
 
         let mainFeaturedAlbum = (
-            
+            // debugger
             <div className="splash-main-featured-container" key={firstAlbum.id} style={{ backgroundImage: "url("+firstAlbum.photoUrl+")"}}>
                 <div className="splash-main-featured-level-1">{firstAlbum.title}</div>
-                By <div className="splash-main-featured-level-2">{firstAlbum.aritst_id}</div>
-                {/* <img className="main-featured-image" src={firstAlbum.photoUrl} alt="" /> */}
+                <div className="splash-side-featured-level-2">By {firstAlbum.artist.artist_name}</div> 
                 <Link to={`/albums/${firstAlbum.id}`}>Listen</Link>
             </div>
         )
@@ -30,9 +29,8 @@ class Splash extends React.Component{
             return (
                 <li className="splash-side-featured" key={album.id} style={{backgroundImage: "url("+album.photoUrl+")"}} >
                     <div className="splash-side-featured-level-1">{album.title}</div>
-                    By <div className="splash-side-featured-level-2">{album.aritst_id}</div> 
+                    <div className="splash-side-featured-level-2">By {album.artist.artist_name}</div> 
                     <Link to={`/albums/${album.id}`}>Listen</Link>
-                    {/* <img className="side-featured-image" src={album.photoUrl} alt=""/> */}
                 </li>
             )
         });

@@ -6,18 +6,22 @@ class AlbumShow extends React.Component {
         super(props);
         this.props.album.album = {
         };
+
+        this.props.album.track = {
+        };
+        
+        this.props.album.album.artist = {}
+        this.props.album.album.description = ""
     }
 
     componentDidMount(){
-        // debugger
         const albumId = this.props.match.params.albumId;
         this.props.fetchAlbum(albumId);
-        // debugger
     }
 
     componentDidUpdate(prevProps) {
         if (typeof prevProps.album === 'undefined') {
-            const albumId = this.props.match.params.albumId;
+            const albumId = this.props.match.params.albumId; 
             this.props.fetchAlbum(albumId);
         }
     }
@@ -30,13 +34,18 @@ class AlbumShow extends React.Component {
         // })
         
         // const tracks = this.props.album.tracks
-        
+        // debugger
+
+        const description = this.props.album.album.description.split(" /nl/").map(line => {
+            <li>{line}</li>
+        })
+        // debugger
 
         return (
             <div className='album-show-container'>
                 <div className='album-show-left'>
                     <header>{this.props.album.album.title} <br/>
-                    by </header>
+                        by {this.props.album.album.artist.artist_name} </header>
                     {/* audio player  */}
                     <strong>Digital Album</strong>
                     <p>High-quality download in MP3</p>

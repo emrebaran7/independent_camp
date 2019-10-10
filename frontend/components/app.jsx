@@ -24,7 +24,6 @@ const App = () => (
         <Route path="/profile" component={ProfileShowContainer} />
         <Route exact path="/" component={SplashContainer} />
         <Route exact path="/albums/:albumId" component={AlbumShowContainer} />
-
         
 
         <footer>

@@ -42,13 +42,13 @@ class Navbar extends React.Component{
             return(
                 <nav className="main-navbar">
                     <section className="left-navbar">
-                        <Link exact to="/" className="logo"><div className="parallelogram"></div>Independentcamp</Link>
+                        <Link to="/" className="logo"><div className="parallelogram"></div>Independentcamp</Link>
                         <div className="motto">Discover amazing new music and directly support the artists who make it.</div>
                     </section>
                     <section className="right-navbar">
-                        <Link exact to="login" >Log In</Link>
-                        <Link exact to="artist/signup">Artist Sign Up</Link>
-                        <Link exact to="fan/signup">Fan Sign Up</Link>
+                        <Link to="/login" >Log In</Link>
+                        <Link to="/artist/signup">Artist Sign Up</Link>
+                        <Link to="/fan/signup">Fan Sign Up</Link>
                     </section>
                 </nav>   
             );

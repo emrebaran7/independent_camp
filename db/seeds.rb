@@ -75,31 +75,33 @@ user6 = User.create(
 album1 = Album.create(
     artist_id: User.find_by(username: 'dom21').id,
     title: 'Dysnomia',
-    description: 'What people are saying about Dysnomia :
-
+    description: 'What people are saying about Dysnomia :/nl/
+        /nl/
         " Something totally unprecedented " - Pitchfork
-
+        /nl/
         " Stellar...at a loss for words " - SPIN
-
+        /nl/
         " Sounds like something completely different " - NPR
-
+        /nl/
         " Perverse in a good way " - The New York Times
-
+        /nl/
         " Seriously never seen anything like these guys...favorite thing in years " - Jad Abumrad, Radiolab
-
+        /nl/
         " Cannot urge you more strongly: go see Dawn of Midi " - Sasha Frere-Jones, The New Yorker
-
+        /nl/
         " Moving and addictive...a feat of innovation " - Interview Magazine
-
+        /nl/
         " An unplugged translation of contemporary electronica...state-of-the-art. " - Time Out NY
-
+        /nl/
         " It sounds like nothing else right now " - The Guardian
-
+        /nl/
         " A mysterious, vital sound with a pull all its own " - Los Angeles Times
-
+        /nl/
         " A work of lunatic genius " - The Village Voice"',
     credits: 'Aakaash Israni - Bass
+    /nl/
     Amino Belyamani - Piano
+    /nl/
     Qasim Naqvi - Drums',
     release_date: Date.new(2015,5,26)
 )
@@ -140,10 +142,15 @@ album4 = Album.create(
     title: 'Work (work, work)',
     description: "reviews: yourcomicbookfantasy.com/workpress.html",
     credits: "Produced by HTRK
+    /nl/
     Mixed by NY
+    /nl/
     Mastered by Denis Blackham at Skye
+    /nl/
     Cover wave image by Trent Mitchell
+    /nl/
     Polaroid by Eulalie Fumond Halperin-Katz, Paris 2009
+    /nl/
     Sleeve design by JCS",
     release_date: Date.new(2011,9,5)
 )
@@ -172,11 +179,21 @@ track1 = Track.create(
     ord: 1,
 )
 
+track1.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Io.mp3"), 
+    filename: "Io.mp3"
+    ) 
+
 track2 = Track.create(
     album_id: Album.find_by(title: 'Dysnomia').id,
     title: 'Sinope',
     ord: 2,
 )
+
+track2.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Sinope.mp3"), 
+    filename: "Sinope.mp3"
+    ) 
 
 track3 = Track.create(
     album_id: Album.find_by(title: 'Dysnomia').id,
@@ -184,17 +201,32 @@ track3 = Track.create(
     ord: 3,
 )
 
+track3.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Atlas.mp3"), 
+    filename: "Atlas.mp3"
+    ) 
+
 track4 = Track.create(
     album_id: Album.find_by(title: 'Dysnomia').id,
     title: 'Nix',
     ord: 4,
-) 
+)
+
+track4.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Nix.mp3"), 
+    filename: "Nix.mp3"
+    ) 
 
 track5 = Track.create(
     album_id: Album.find_by(title: 'Dysnomia').id,
     title: 'Moon',
     ord: 5,
- ) 
+    )
+
+track5.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Moon.mp3"), 
+    filename: "Moon.mp3"
+    ) 
 
 track6 = Track.create(
     album_id: Album.find_by(title: 'Dysnomia').id,
@@ -202,11 +234,21 @@ track6 = Track.create(
     ord: 6,
 ) 
 
+track6.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Ymir.mp3"), 
+    filename: "Ymir.mp3"
+    ) 
+
 track7 = Track.create(
     album_id: Album.find_by(title: 'Dysnomia').id,
     title: 'Ijiraq',
     ord: 7,
 )
+
+track7.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Ijiraq.mp3"), 
+    filename: "Ijiraq.mp3"
+    ) 
 
 track8 = Track.create(
     album_id: Album.find_by(title: 'Dysnomia').id,
@@ -214,11 +256,21 @@ track8 = Track.create(
     ord: 8,
 )
 
+track8.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Algol.mp3"), 
+    filename: "Algol.mp3"
+    ) 
+
 track9 = Track.create(
     album_id: Album.find_by(title: 'Dysnomia').id,
     title: 'Dysnomia',
     ord: 9,
 ) 
+
+track9.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/dom-dysnomia/Dysnomia.mp3"), 
+    filename: "Dysnomia.mp3"
+    ) 
 
 track10 = Track.create(
     album_id: Album.find_by(title: 'Searching EP').id,
@@ -226,12 +278,21 @@ track10 = Track.create(
     ord: 1,
 )
 
+track10.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/emre-ersolmaz-searching/Searching.mp3"), 
+    filename: "Searching.mp3"
+    ) 
+
 track11 = Track.create(
     album_id: Album.find_by(title: 'Searching EP').id,
     title: 'Say Something',
     ord: 2,
-) 
+)
 
+track11.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/emre-ersolmaz-searching/Say_Something.mp3"), 
+    filename: "Say_Something.mp3"
+    ) 
 
 track12= Track.create(
     album_id: Album.find_by(title: 'Aftertouches').id,
@@ -239,11 +300,21 @@ track12= Track.create(
     ord: 1,
 )
 
+track12.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Imgs_R.mp3"), 
+    filename: "Imgs_R.mp3"
+    ) 
+
 track13 = Track.create(
     album_id: Album.find_by(title: 'Aftertouches').id,
     title: 'Touch Me & Die',
     ord: 2,
 )
+
+track13.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Touch_Me_Die.mp3"), 
+    filename: "Touch_Me_Die.mp3"
+    ) 
 
 track14 = Track.create(
     album_id: Album.find_by(title: 'Aftertouches').id,
@@ -251,17 +322,32 @@ track14 = Track.create(
     ord: 3,
 )
 
+track14.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Splash_144.mp3"), 
+    filename: "Splash_144.mp3"
+    ) 
+
 track15 = Track.create(
     album_id: Album.find_by(title: 'Aftertouches').id,
     title: 'X 4EWI',
     ord: 4,
 )
 
+track15.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/X_4ewi.mp3"), 
+    filename: "X_4ewi.mp3"
+    ) 
+
 track16 = Track.create(
     album_id: Album.find_by(title: 'Aftertouches').id,
-    title: 'Ad_ renaline',
+    title: 'Ad_renaline',
     ord: 5,
 )
+
+track16.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Ad_Renaline.mp3"), 
+    filename: "Ad_Renaline.mp3"
+    ) 
 
 track17 = Track.create(
     album_id: Album.find_by(title: 'Aftertouches').id,
@@ -269,17 +355,32 @@ track17 = Track.create(
     ord: 6,
 )
 
+track17.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Icon_C.mp3"), 
+    filename: "Icon_C.mp3"
+    ) 
+
 track18 = Track.create(
     album_id: Album.find_by(title: 'Aftertouches').id,
     title: 'Arcane',
     ord: 7,
 )
 
+track18.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Arcane.mp3"), 
+    filename: "Arcane.mp3"
+    ) 
+
 track19 = Track.create(
     album_id: Album.find_by(title: 'Aftertouches').id,
     title: 'Nu_chanic',
     ord: 8,
-) 
+)
+
+track19.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Nu_chanic.mp3"), 
+    filename: "Nu_chanic.mp3"
+    ) 
 
 track20 = Track.create(
     album_id: Album.find_by(title: 'Aftertouches').id,
@@ -287,11 +388,22 @@ track20 = Track.create(
     ord: 9,
 ) 
 
+track20.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/klc-aftertouches/Saps_H.mp3"), 
+    filename: "Saps_H.mp3"
+    ) 
+
 track21 = Track.create(
     album_id: Album.find_by(title: 'Work (work, work)').id,
     title: 'Ice Eyes Eis',
     ord: 1,
-) 
+)
+
+track21.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Ice_Eyes_Eis.mp3"), 
+    filename: "Ice_Eyes_Eis.mp3"
+    ) 
+
 
 track22 = Track.create(
     album_id: Album.find_by(title: 'Work (work, work)').id,
@@ -299,11 +411,22 @@ track22 = Track.create(
     ord: 2,
 )
 
+track22.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Slo_Glo.mp3"), 
+    filename: "Slo_Glo.mp3"
+    ) 
+
+
 track23 = Track.create(
     album_id: Album.find_by(title: 'Work (work, work)').id,
     title: 'Eat Yr Heart',
     ord: 3,
 )
+
+track23.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Eat_Yr_Heart.mp3"), 
+    filename: "Eat_Yr_Heart.mp3"
+    ) 
 
 track24 = Track.create(
     album_id: Album.find_by(title: 'Work (work, work)').id,
@@ -311,11 +434,21 @@ track24 = Track.create(
     ord: 4,
 )
 
+track24.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Bendin.mp3"), 
+    filename: "Bendin.mp3"
+    ) 
+
 track25 = Track.create(
     album_id: Album.find_by(title: 'Work (work, work)').id,
     title: 'Skinny',
     ord: 5,
 )
+
+track25.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Skinny.mp3"), 
+    filename: "Skinny.mp3"
+    ) 
 
 track26 = Track.create(
     album_id: Album.find_by(title: 'Work (work, work)').id,
@@ -323,17 +456,32 @@ track26 = Track.create(
     ord: 6,
 )
 
+track26.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Synthetik.mp3"), 
+    filename: "Synthetik.mp3"
+    ) 
+
 track27 = Track.create(
     album_id: Album.find_by(title: 'Work (work, work)').id,
     title: 'Poison',
     ord: 7,
 )
 
+track27.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Poison.mp3"), 
+    filename: "Poison.mp3"
+    ) 
+
 track28 = Track.create(
     album_id: Album.find_by(title: 'Work (work, work)').id,
     title: 'Work that Body',
     ord: 8,
-) 
+)
+
+track28.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Work_that_Body.mp3"), 
+    filename: "Work_that_Body.mp3"
+    ) 
 
 track29 = Track.create(
     album_id: Album.find_by(title: 'Work (work, work)').id,
@@ -341,14 +489,30 @@ track29 = Track.create(
     ord: 9,
 ) 
 
+track29.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Love_Triangle.mp3"), 
+    filename: "Love_Triangle.mp3"
+    ) 
+
 track30 = Track.create(
     album_id: Album.find_by(title: 'Work (work, work)').id,
     title: 'Body Double',
     ord: 10,
 )
 
+track30.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/htrk-work-work-work/Body_Double.mp3"), 
+    filename: "Body_Double.mp3"
+    ) 
+
+
 track31 = Track.create(
     album_id: Album.find_by(title: 'Looks Like Eldorado').id,
     title: "Looks Like Eldorado",
     ord: 1,
 )
+
+track31.audio.attach(
+    io: File.open("/Users/emreersolmaz/Desktop/independent-camp-album-artwork/Audio/novad-looks-like-eldorado/Looks_like_Eldorado.mp3"), 
+    filename: "Looks_like_Eldorado.mp3"
+    ) 

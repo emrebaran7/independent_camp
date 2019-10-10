@@ -14,8 +14,7 @@
 
 class Album < ApplicationRecord
     validates :artist_id, :title, :release_date, presence: true
-    # before_action :ensure_logged_in, only: [:new, :edit, :update, :create, :destroy]
-    
+
     belongs_to :artist,
         primary_key: :id,
         foreign_key: :artist_id,
