@@ -2,17 +2,29 @@
     margin-left: 465px;
     margin-right: 465px;
     display: flex;
+    min-height: 600px;
 }
 
 .album-show-container img{
-    height: 350px;
-    width: 350px;
+    height: 275px;
+    width: 275px;
 }
 
 .album-show-left{
-    padding-top: 38px
+    padding-top: 38px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // overflow: scroll;
+    flex-wrap: wrap;
+}
+
+.album-show-left header{
+    font-weight: bold;
 }
 
 .album-show-right{
-    padding-top: 38px
+    padding-top: 38px;
+    padding-left: 15px;
 }
