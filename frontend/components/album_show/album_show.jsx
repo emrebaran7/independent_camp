@@ -9,27 +9,29 @@ class AlbumShow extends React.Component {
     componentDidMount(){
         const albumId = this.props.match.params.albumId;
         this.props.fetchAlbum(albumId);
+
+        this.handleSongClick = this.handleSongClick.bind(this)
     }
 
     componentDidUpdate(prevProps) {
-        debugger
-
         const albumId = this.props.match.params.albumId;
-
         if ( prevProps.match.params.albumId !== albumId) {
             this.props.fetchAlbum(albumId);
         }
     }
 
+    handleSongClick(e) {
+        e.prevenDefault()
+    }
+
     render(){
-        // debugger
         if (!this.props.album || this.props.tracks.length < 1) {
             return null
         }
         let tracks = this.props.tracks.map(track => {
             return( 
                     <li className="album-track-ele" key={track.id}>
-                        <div>{track.ord}.{track.title}</div>
+                        <button className="track-play"></button><div>{track.ord}.{track.title}</div>
                     </li>
                 )
             })
@@ -38,19 +40,35 @@ class AlbumShow extends React.Component {
             return <li key={i}>{line}</li>
         })
 
+        let credits = this.props.album.credits.split("/nl/").map((line, i) => {
+            return <li key={i}>{line}</li>
+        })
+
+        debugger
+
+        const playlist = Object.values(this.props.tracks)
+        
+        // let songPlayer = new Audio()
+
         return (
             <div className='album-show-container'>
                 <div className='album-show-left'>
-                    <header>{this.props.album.title} <br/>
-                        by {this.props.album.artist.artist_name}
+                    <header>
+                        <h2>{this.props.album.title}</h2>
+                        <h3>By {this.props.album.artist.artist_name}</h3>
                     </header>
-                    {/* audio player  */}
+
+                    {/* {songPlayer} */}
+                    <audio preload controls src={this.props.tracks[0].audioUrl}>
+                        Your browser does not support the audio element.
+                    </audio>
+
                     <strong>Digital Album</strong>
                     <p>High-quality download in MP3</p>
                     <ul className='tracks'>{tracks}</ul>
-                    <p className='album-description'>{description}</p>
-                    <p className='album-release-date'>{this.props.album.release_date}</p>
-                    <p className='album-release-credits'>{this.props.album.credits}</p>
+                    <ul className='album-description'>{description}</ul>
+                    <p className='album-release-date'>Released {this.props.album.release_date}</p>
+                    <ul className='album-release-credits'>{credits}</ul>
                     <p> © all rights reserved</p>
                 </div>
 
@@ -63,3 +81,18 @@ class AlbumShow extends React.Component {
 }
     
     export default AlbumShow;
+        // js audio player work
+
+        // let trackSources;
+
+        // this.props.tracks.forEach(track => {
+        //    trackSources.push(track.audioUrl)
+        // })
+
+        // debugger
+
+        // let song = new Audio();
+        // let currentSong = 0;       
+
+        // song.src = trackSources[0]
+        // js audio player work

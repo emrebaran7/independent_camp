@@ -84,3 +84,8 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+audio{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}

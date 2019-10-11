@@ -1,22 +1,20 @@
 footer {
   padding: 0 0 80px;
-  position: relative;
+  padding-bottom: 80px;
   display: flex;
   flex-direction: row;
-  min-height: 20%;
   justify-content: space-between;
   align-items: space-between;
   align-content: center;
-  padding: 0px 0px 80px;
   font-size: 13px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: white;
   align-content: space-around;
-  position: fixed;
+  // position: absolute;
   width: 100%;
-  height: 2.5rem;
   left: 0;
   background: #477987;
+  bottom: 0px
 }
 
 .right-footer{
