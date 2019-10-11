@@ -25,13 +25,13 @@ class AlbumShow extends React.Component {
     }
 
     update(num) {
-        debugger
+        
         return () => {
-            // debugger
+            // 
             this.setState({
                 currentSong: num
             }, () => {
-                debugger
+                
             } );
         }
     }
@@ -45,7 +45,7 @@ class AlbumShow extends React.Component {
             return null
         }
         let tracks = this.props.tracks.map((track, i) => {
-            debugger
+            
             return( 
                     <li className="album-track-ele" key={track.id}>
                         <button 
@@ -66,7 +66,7 @@ class AlbumShow extends React.Component {
             return <li key={i}>{line}</li>
         })
 
-        // debugger
+        // 
 
         const tracklist = (this.props.tracks)
         const audios = tracklist.map(track => {
@@ -112,7 +112,7 @@ class AlbumShow extends React.Component {
         //    trackSources.push(track.audioUrl)
         // })
 
-        // debugger
+        // 
 
         // let song = new Audio();
         // let currentSong = 0;       
