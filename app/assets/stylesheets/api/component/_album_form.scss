@@ -1,0 +1,21 @@
+.album-form-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.album-form-container-right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.album-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.album-form-input-label{
+    display: flex;
+    flex-direction: column;
+}

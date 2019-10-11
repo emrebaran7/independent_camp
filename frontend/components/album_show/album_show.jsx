@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 class AlbumShow extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            currentSong: 0
+        }
     }
 
     componentDidMount(){
@@ -20,11 +24,17 @@ class AlbumShow extends React.Component {
         }
     }
 
-    // update(field) {
-    //     return e => this.setState({
-    //         [field]: e.currentTarget.value
-    //     });
-    // }
+    update(num) {
+        debugger
+        return () => {
+            // debugger
+            this.setState({
+                currentSong: num
+            }, () => {
+                debugger
+            } );
+        }
+    }
 
     // handleSongClick(e) {
     //     e.prevenDefault()
@@ -34,10 +44,16 @@ class AlbumShow extends React.Component {
         if (!this.props.album || this.props.tracks.length < 1) {
             return null
         }
-        let tracks = this.props.tracks.map(track => {
+        let tracks = this.props.tracks.map((track, i) => {
+            debugger
             return( 
                     <li className="album-track-ele" key={track.id}>
-                        <button className="track-play" key={track.ord}></button><div>{track.ord}.{track.title}</div>
+                        <button 
+                            className="track-play" 
+                            key={track.ord} 
+                            onClick={this.update(i)}>
+                        </button>
+                        <div>{track.ord}.{track.title}</div>
                     </li>
                 )
             })
@@ -52,12 +68,11 @@ class AlbumShow extends React.Component {
 
         // debugger
 
-        const tracklist = Object.values(this.props.tracks)
+        const tracklist = (this.props.tracks)
         const audios = tracklist.map(track => {
             return (track.audioUrl)
         })
         
-        // let songPlayer = new Audio()
 
         return (
             <div className='album-show-container'>
@@ -67,11 +82,10 @@ class AlbumShow extends React.Component {
                         <h3>By {this.props.album.artist.artist_name}</h3>
                     </header>
 
-                    {/* {songPlayer} */}
-                    <audio controls src={audios[0]}>
+                    <audio controls src={audios[this.state.currentSong]}>
                         Your browser does not support the audio element.
                     </audio>
-
+                    
                     <strong>Digital Album</strong>
                     <p>High-quality download in MP3</p>
                     <ul className='tracks'>{tracks}</ul>
