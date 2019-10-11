@@ -10,7 +10,7 @@ class AlbumShow extends React.Component {
         const albumId = this.props.match.params.albumId;
         this.props.fetchAlbum(albumId);
 
-        this.handleSongClick = this.handleSongClick.bind(this)
+        // this.handleSongClick = this.handleSongClick.bind(this)
     }
 
     componentDidUpdate(prevProps) {
@@ -20,9 +20,15 @@ class AlbumShow extends React.Component {
         }
     }
 
-    handleSongClick(e) {
-        e.prevenDefault()
-    }
+    // update(field) {
+    //     return e => this.setState({
+    //         [field]: e.currentTarget.value
+    //     });
+    // }
+
+    // handleSongClick(e) {
+    //     e.prevenDefault()
+    // }
 
     render(){
         if (!this.props.album || this.props.tracks.length < 1) {
@@ -31,7 +37,7 @@ class AlbumShow extends React.Component {
         let tracks = this.props.tracks.map(track => {
             return( 
                     <li className="album-track-ele" key={track.id}>
-                        <button className="track-play"></button><div>{track.ord}.{track.title}</div>
+                        <button className="track-play" key={track.ord}></button><div>{track.ord}.{track.title}</div>
                     </li>
                 )
             })
@@ -44,9 +50,12 @@ class AlbumShow extends React.Component {
             return <li key={i}>{line}</li>
         })
 
-        debugger
+        // debugger
 
-        const playlist = Object.values(this.props.tracks)
+        const tracklist = Object.values(this.props.tracks)
+        const audios = tracklist.map(track => {
+            return (track.audioUrl)
+        })
         
         // let songPlayer = new Audio()
 
@@ -59,7 +68,7 @@ class AlbumShow extends React.Component {
                     </header>
 
                     {/* {songPlayer} */}
-                    <audio preload controls src={this.props.tracks[0].audioUrl}>
+                    <audio controls src={audios[0]}>
                         Your browser does not support the audio element.
                     </audio>
 
@@ -68,7 +77,7 @@ class AlbumShow extends React.Component {
                     <ul className='tracks'>{tracks}</ul>
                     <ul className='album-description'>{description}</ul>
                     <p className='album-release-date'>Released {this.props.album.release_date}</p>
-                    <ul className='album-release-credits'>{credits}</ul>
+                    <ul className='album-credits'>{credits}</ul>
                     <p> © all rights reserved</p>
                 </div>
 

@@ -1,11 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {createAlbum} from "../../actions/album_actions"
-
+import AlbumForm from './album_form'
+3
 const msp = ({entities}) => {
+    // debugger
     return({
-        currentUser: entities.users[entities.session.id].username,
-        currentUserId: entities.session.id,
+
+        currentUser: entities.users.username,
+        currentUserId: entities.users.id,
     })
 }
 

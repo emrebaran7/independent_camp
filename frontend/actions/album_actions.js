@@ -31,7 +31,7 @@ const removeAlbum = album => {
 };
 
 const receiveFourAlbums = ({albums, users}) => {
-    debugger
+    // debugger
     return {
         type: RECEIVE_FOUR_ALBUMS,
         albums,

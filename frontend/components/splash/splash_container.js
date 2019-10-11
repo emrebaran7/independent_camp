@@ -7,7 +7,7 @@ const msp = (state) => {
     // debugger
     const featuredAlbums = getFeaturedAlbums(state);
     const featuredArtists = getFeaturedAlbumsArtists(state);
-    debugger
+    // debugger
 
     return ({
         featuredAlbums: featuredAlbums,

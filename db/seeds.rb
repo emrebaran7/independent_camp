@@ -116,7 +116,7 @@ album1.photo.attach(
 album2 = Album.create(
     artist_id: User.find_by(username: 'emrebaran7').id,
     title: 'Searching EP',
-    description: "Something I have worked on for over 5 years",
+    description: "Something I worked on 5 years ago",
     credits: 'Emre Ersolmaz',
     release_date: Date.new(2019,10,1)
 )

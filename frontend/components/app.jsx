@@ -6,8 +6,9 @@ import FanSignupFormContainer from './session_form/fan_signup_form_container'
 import LoginFormContainer from './session_form/login_form_container'
 import ProfileShowContainer from './profile_show/profile_show_container'
 import AlbumShowContainer from './album_show/album_show_container'
+import AlbumFormContainer from './album_form/album_form_container'
 import SplashContainer from './splash/splash_container'
-import {AuthRoute} from '../util/route_util'
+import {AuthRoute, ProtectedRoute} from '../util/route_util'
 import {Link} from 'react-router-dom'
 import NavbarContainer from './nav/navbar_container'
 
@@ -21,10 +22,11 @@ const App = () => (
         <AuthRoute path="/artist/signup" component={ArtistSignupFormContainer} />
         <AuthRoute path="/fan/signup" component={FanSignupFormContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
-        <Route path="/profile" component={ProfileShowContainer} />
+        {/* <Route path="/profile" component={ProfileShowContainer} /> */}
         <Route exact path="/" component={SplashContainer} />
         <Route exact path="/albums/:albumId" component={AlbumShowContainer} />
-        
+        <ProtectedRoute exact path="/albums/new" component={AlbumFormContainer} />
+
 
         <footer>
             <div className="left-footer">Independentcamp is a clone of bandcamp created by Emre Ersolmaz

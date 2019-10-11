@@ -18,24 +18,30 @@ footer {
 }
 
 .right-footer{
-    justify-items: flex-end;
-    margin-right: 77px;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 100px;
+  justify-items: flex-end;
+  margin-right: 77px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.right-footer a{
+  margin-bottom: 5px;
 }
 
 
+
 .left-footer{
-    justify-items: flex-start;
-    margin-left: 77px;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 40px;
+  justify-items: flex-start;
+  margin-left: 77px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding-right: 20px;
 }
 
 footer a { 

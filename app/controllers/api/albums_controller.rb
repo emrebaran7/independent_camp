@@ -29,7 +29,6 @@ class Api::AlbumsController < ApplicationController
 
     def new
         @album = Album.new
-        render :new
     end
 
     def edit
