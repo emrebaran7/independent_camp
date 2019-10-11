@@ -31,14 +31,9 @@ class AlbumShow extends React.Component {
             this.setState({
                 currentSong: num
             }, () => {
-                
             } );
         }
     }
-
-    // handleSongClick(e) {
-    //     e.prevenDefault()
-    // }
 
     render(){
         if (!this.props.album || this.props.tracks.length < 1) {
