@@ -77,7 +77,7 @@ class AlbumShow extends React.Component {
                         <h3>By {this.props.album.artist.artist_name}</h3>
                     </header>
 
-                    <audio controls src={audios[this.state.currentSong]}>
+                    <audio controls src={audios[this.state.currentSong] } preload>
                         Your browser does not support the audio element.
                     </audio>
                     
