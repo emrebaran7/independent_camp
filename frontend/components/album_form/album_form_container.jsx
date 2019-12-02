@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import {createAlbum} from "../../actions/album_actions"
 import AlbumForm from './album_form'
 
-const msp = ({entities}) => {
-    // debugger
+const msp = ({entities, errors}) => {
+    debugger
     return({
-
-        currentUser: entities.users.username,
-        currentUserId: entities.users.id,
+        currentUser: Object.values(entities.users)[0].username,
+        currentUserId: Object.values(entities.users)[0].id,
+        errors
     })
 }
 
@@ -17,5 +17,3 @@ const mdp = dispatch => ({
 })
 
 export default connect(msp, mdp)(AlbumForm);
-
-

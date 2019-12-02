@@ -26,22 +26,35 @@ class AlbumForm extends React.Component {
         this.props.processForm(album).then(() => this.props.history.push('/'))
     }
 
+    renderErrors() {
+        return (
+            <div>
+                <ul>
+                    {this.props.errors.map((error) => (
+                        <li>{error}</li>
+                    ))}
+                </ul>
+            </div>
+        )
+    }
+
+
     render(){
         return(
             <div className="album-form-container">
                 <div className="album-form-container-right">
                     <form className="album-form" onSubmit={this.handleSubmit}>
                         <label className="album-form-input-label">
-                            <input required type="text" value={this.state.title} onChange={this.update('title')} className="albump-form-title-input" placeholder="Album Title"/>
+                            <input required type="text" value={this.state.title} onChange={this.update('title')} className="album-form-title-input" placeholder="Album Title"/>
                         </label>
                         <label className="album-form-input-label">Description
-                            <input required type="text" value={this.state.description} onChange={this.update('description')} className="albump-form-description-input" placeholder="optional"/>
+                            <input required type="text" value={this.state.description} onChange={this.update('description')} className="album-form-description-input" placeholder="optional"/>
                         </label>
                         <label className="album-form-input-label">Credits
-                            <input required type="text" value={this.state.credits} onChange={this.update('credits')} className="albump-form-credits-input" placeholder="optional"/>
+                            <input required type="text" value={this.state.credits} onChange={this.update('credits')} className="album-form-credits-input" placeholder="optional"/>
                         </label>
                         <label className="album-form-input-label">Release Date
-                            <input required type="text" value={this.state.release_date} onChange={this.update('release_date')} className="albump-form-title-release_date"/>
+                            <input required type="text" value={this.state.release_date} onChange={this.update('release_date')} className="album-form-title-release_date"/>
                         </label>
                     </form>
                     <input type="submit" value="Publish"/>  

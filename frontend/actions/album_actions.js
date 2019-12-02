@@ -8,7 +8,7 @@ export const RECEIVE_FOUR_ALBUMS = "RECEIVE_FOUR_ALBUMS";
 import * as AlbumApiUtil from "../util/album_api_util"
 
 const receiveAlbum = ({album, tracks}) => {
-    // debugger
+    debugger
     return {
         type: RECEIVE_ALBUM,
         album,
