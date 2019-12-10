@@ -1,3 +1,4 @@
+
 .album-form-container{
     display: flex;
     flex-direction: row;
@@ -12,10 +13,17 @@
 .album-form{
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    align-items: flex-end;
 }
 
 .album-form-input-label{
     display: flex;
     flex-direction: column;
+}
+
+.album-form-title-input{
+    width: 405px;
+    font-size: 22px;
+    padding: 5px 10px;
+    margin: 0 0 3px 0;
 }

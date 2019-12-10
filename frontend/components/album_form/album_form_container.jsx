@@ -4,7 +4,6 @@ import {createAlbum} from "../../actions/album_actions"
 import AlbumForm from './album_form'
 
 const msp = ({entities, errors}) => {
-    debugger
     return({
         currentUser: Object.values(entities.users)[0].username,
         currentUserId: Object.values(entities.users)[0].id,

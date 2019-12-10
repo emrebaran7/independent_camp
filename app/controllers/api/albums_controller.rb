@@ -9,9 +9,7 @@ class Api::AlbumsController < ApplicationController
     end
 
     def show
-        # debugger
         @album = Album.find(params[:id])
-        # debuggerr
         render :show
         
     end
@@ -19,10 +17,10 @@ class Api::AlbumsController < ApplicationController
     def create
         @album = current_user.albums.new(album_params)
 
-        if album.save
-            redirect_to api_album_url(album)
+        if @album.save
+            redirect_to api_album_url(@album)
         else
-            flash.now[:errors] = album.errors.full_messages
+            flash.now[:errors] = @album.errors.full_messages
             render :new
         end
     end
